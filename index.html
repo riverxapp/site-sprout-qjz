@@ -1,229 +1,204 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Site Sprout - Agency-Grade Web Experiences</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-    }
-  </script>
-  <script>
-    (function() {
-      const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = stored || (prefersDark ? 'dark' : 'light');
-      document.documentElement.classList.add(theme);
-    })();
-  </script>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
-    .scroll-smooth { scroll-behavior: smooth; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Site Sprout — Agency-Grade Digital Solutions</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+</style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-100 via-white to-blue-50 text-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-100">
-  <header class="sticky top-0 z-40 border-b border-white/20 bg-white/70 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/70">
-    <nav>
-      <div class="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-4 sm:px-6">
-        <a href="#hero" class="flex items-center gap-3 transition hover:opacity-90">
-          <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500 text-white shadow-xl">
-            <span class="text-sm font-bold">SS</span>
-          </div>
-          <span class="text-xl font-bold tracking-tight">Site Sprout</span>
-        </a>
-        <div class="hidden items-center gap-6 md:flex">
-          <a href="#services" class="text-sm font-medium transition hover:text-indigo-600">Services</a>
-          <a href="#process" class="text-sm font-medium transition hover:text-indigo-600">Our Process</a>
-          <a href="#work" class="text-sm font-medium transition hover:text-indigo-600">Our Work</a>
-          <a href="#testimonials" class="text-sm font-medium transition hover:text-indigo-600">Testimonials</a>
-          <a href="#faq" class="text-sm font-medium transition hover:text-indigo-600">FAQ</a>
-        </div>
-        <div class="hidden md:flex md:items-center md:gap-3">
-          <button type="button" id="theme-toggle" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60" aria-label="Toggle theme">
-            <svg id="icon-sun" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-            <svg id="icon-moon" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          </button>
-          <a href="#final-cta" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-2.5 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">Start Your Project</a>
-        </div>
-        <div class="flex items-center gap-1 md:hidden">
-          <button type="button" id="theme-toggle-mobile" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60" aria-label="Toggle theme">
-            <svg id="icon-sun-mobile" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-            <svg id="icon-moon-mobile" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-          </button>
-          <button type="button" id="mobile-menu-btn" class="rounded-xl p-2 transition hover:bg-slate-200/50 dark:hover:bg-slate-800/60 md:hidden" aria-label="Toggle menu">
-            <svg id="icon-menu" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg id="icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-        </div>
-      </div>
-      <div id="mobile-menu" class="hidden border-t border-white/20 bg-white/90 backdrop-blur-xl dark:border-slate-800/60 dark:bg-slate-950/90 md:hidden">
-        <div class="mx-auto flex max-w-[1600px] flex-col gap-2 px-4 py-3 sm:px-6">
-          <a href="#services" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Services</a>
-          <a href="#process" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Our Process</a>
-          <a href="#work" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Our Work</a>
-          <a href="#testimonials" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">Testimonials</a>
-          <a href="#faq" class="mobile-link rounded-lg px-2 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-800">FAQ</a>
-          <a href="#final-cta" class="mobile-link mt-1 inline-flex justify-center rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-4 py-2 text-sm font-semibold text-white">Start Your Project</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <div class="mx-auto w-full max-w-[1600px] px-4 sm:px-6">
-      <section id="hero" class="py-20 sm:py-36">
-        <div class="grid items-center gap-16 lg:grid-cols-2">
-          <div>
-            <span class="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-[11px] sm:text-sm font-semibold uppercase tracking-wider text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300">Agency-Grade Web Solutions</span>
-            <h1 class="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl bg-gradient-to-r from-slate-900 via-indigo-700 to-blue-600 bg-clip-text text-transparent dark:from-white dark:via-indigo-400 dark:to-blue-400">We build digital experiences that drive real business growth.</h1>
-            <p class="mt-6 max-w-xl text-lg text-slate-600 dark:text-slate-300">Site Sprout is a full-service agency specializing in custom web development, design, and strategy. From concept to launch, we deliver results that matter.</p>
-            <div class="mt-8 flex flex-wrap items-center gap-4">
-              <a href="#final-cta" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-[1.05]">Book a Free Consultation</a>
-              <a href="#work" class="inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold transition hover:bg-white/60 dark:border-slate-700 dark:hover:bg-slate-800/40">View Our Work <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M12.293 5.293a1 1 0 011.414 0L17 8.586a2 2 0 010 2.828l-3.293 3.293a1 1 0 01-1.414-1.414L13.586 11H5a1 1 0 110-2h8.586l-1.293-1.293a1 1 0 010-1.414z"/></svg></a>
-            </div>
-            <div class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-slate-500 dark:text-slate-400">
-              <span>Custom development & design</span>
-              <span class="hidden h-1 w-1 rounded-full bg-slate-300 sm:inline-block"></span>
-              <span>Results-driven strategy</span>
-            </div>
-          </div>
-          <div class="relative">
-            <div class="overflow-hidden rounded-3xl border border-white/30 bg-white/70 shadow-2xl backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/60">
-              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80" alt="Agency workspace" class="h-full w-full object-cover">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-              <div class="absolute bottom-6 left-6 text-white">
-                <span class="rounded-full bg-white/20 px-3 py-1 text-xs font-medium uppercase">Strategic Approach</span>
-                <h3 class="mt-2 text-lg font-semibold">From vision to launch</h3>
-                <p class="text-sm text-white/80">We handle every step of the journey, ensuring your project is delivered on time and on budget.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="trusted-by" class="border-y border-white/20 py-16 dark:border-slate-800/60">
-        <div class="mx-auto max-w-5xl text-center">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400 dark:text-slate-500">Trusted by leading brands</p>
-          <div class="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-sm font-medium text-slate-500 sm:gap-x-16 dark:text-slate-400">
-            <span class="tracking-tight">NovaCloud</span>
-            <span class="tracking-tight">PixelDesk</span>
-            <span class="tracking-tight">Northwave</span>
-            <span class="tracking-tight">LinearLabs</span>
-            <span class="tracking-tight">Brightline</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="services" class="py-10 sm:py-24">
-        <div class="mx-auto max-w-3xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Full-cycle agency services.</h2>
-          <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-400">From strategy to deployment, we handle every stage of your digital project.</p>
-        </div>
-        <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3M5 11h14M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5A2 2 0 003 7v12a2 2 0 002 2z"/></svg>
-            </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">MVP Development</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Rapidly prototype and launch your minimum viable product to validate your idea with real users.</p>
-          </article>
-          <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
-            </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Custom Development</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Tailored web applications with custom workflows, integrations, and features to match your exact needs.</p>
-          </article>
-          <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 10h8m-8 4h5M4 6h16a1 1 0 011 1v9a1 1 0 01-1 1h-4.586a1 1 0 00-.707.293L11 21l-3.707-3.707A1 1 0 006.586 17H4a1 1 0 01-1-1V7a1 1 0 011-1z"/></svg>
-            </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">UI/UX Design</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Create intuitive, beautiful interfaces that delight users and drive engagement on your platform.</p>
-          </article>
-          <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M7 10l3 3 4-6 5 7"/></svg>
-            </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">API Integrations</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Connect your platform to third-party services like Stripe, Zapier, Google, and custom APIs.</p>
-          </article>
-          <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3l7 4v5c0 4.418-3.134 8.418-7 9-3.866-.582-7-4.582-7-9V7l7-4z"/></svg>
-            </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Performance Optimization</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Improve load times, database queries, and workflow efficiency to ensure your site runs smoothly at scale.</p>
-          </article>
-          <article class="group flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 transition-colors group-hover:bg-indigo-100 dark:bg-indigo-900/50 dark:text-indigo-400 dark:group-hover:bg-indigo-900/70">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7h8M7 17h4m2 0h4M7 7l-3 3m13-3l3 3M7 17l-3-3m13 3l3-3"/></svg>
-            </div>
-            <h3 class="text-base font-semibold text-slate-900 dark:text-slate-50">Maintenance & Support</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">Ongoing monitoring, updates, and support to keep your platform secure and up-to-date.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="process" class="border-t border-white/20 py-10 sm:py-24 dark:border-slate-800/60">
-        <div class="mx-auto max-w-3xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">A proven process for delivering results.</h2>
-          <p class="mt-3 text-sm text-slate-600 sm:text-base">We follow a structured approach to ensure your project is delivered on time and within scope.</p>
-        </div>
-        <div class="mt-10 grid gap-8 md:grid-cols-4">
-          <div class="flex flex-col items-start gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-50 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-400">1</div>
-            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Discovery & Strategy</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">We dive deep into your business goals, user needs, and technical requirements to create a clear roadmap.</p>
-          </div>
-          <div class="flex flex-col items-start gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-50 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-400">2</div>
-            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Design & Prototyping</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">We design wireframes and interactive prototypes so you can visualize the product before development begins.</p>
-          </div>
-          <div class="flex flex-col items-start gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-50 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-400">3</div>
-            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Agile Development</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">We build in iterative sprints, providing regular demos and feedback loops to keep you aligned.</p>
-          </div>
-          <div class="flex flex-col items-start gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm transition hover:border-indigo-200/60 hover:shadow-xl dark:border-slate-700/50 dark:bg-slate-900/60 dark:hover:border-indigo-800/50">
-            <div class="flex h-9 w-9 items-center justify-center rounded-full bg-indigo-50 text-xs font-semibold text-indigo-700 dark:bg-indigo-900/50 dark:text-indigo-400">4</div>
-            <h3 class="text-sm font-semibold text-slate-900 dark:text-slate-50">Launch & Scale</h3>
-            <p class="text-sm leading-relaxed text-slate-600 dark:text-slate-400">We deploy, test, and monitor your platform, then provide ongoing support as you grow.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" class="py-8 sm:py-24">
-        <div class="grid items-center gap-12 lg:grid-cols-2">
-          <div>
-            <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">Agency work that delivers real impact.</h2>
-            <p class="mt-3 text-sm text-slate-600 dark:text-slate-400 sm:text-base">Every project we ship is designed to solve a real business problem. From marketplaces to internal tools, our portfolio spans industries and use cases.</p>
-            <ul class="mt-5 space-y-3 text-sm text-slate-700 dark:text-slate-300">
-              <li class="flex items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span>Multi-vendor marketplace platform with Stripe Connect.</span></li>
-              <li class="flex items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span>SaaS dashboard with real-time analytics and user management.</span></li>
-              <li class="flex items-start gap-2"><span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400"><svg class="h-3 w-3" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 6l3 3 5-6"/></svg></span><span>Internal operations tool with automated workflows and notifications.</span></li>
-            </ul>
-          </div>
-          <div class="relative">
-            <div class="overflow-hidden rounded-3xl border border-white/30 bg-white/70 shadow-2xl backdrop-blur-xl dark:border-slate-700/50 dark:bg-slate-900/60">
-              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Agency dashboard mockup" class="h-full w-full object-cover">
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="testimonials" class="py-10 sm:py-24">
-        <div class="mx-auto max-w-3xl text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-50 sm:text-4xl">What our clients say.</h2>
-          <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-400">Don't just take our word for it — hear from the teams we've helped.</p>
-        </div>
-        <div class="mt-12 grid gap-6 md:grid-cols-3">
-          <article class="flex flex-col gap-4 rounded-2xl border border-white/30 bg-white/70 p-6 shadow-lg backdrop-blur-sm dark:border-slate-700/50 dark:bg-slate-900/60">
-            <div class="flex items-center gap-1 text-yellow-400">
-              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
-              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l
+<body class="bg-white text-gray-900 antialiased">
+<header class="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+<a href="#" class="text-2xl font-bold tracking-tight text-indigo-700">Site Sprout</a>
+<nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+<a href="#services" class="hover:text-indigo-700 transition">Services</a>
+<a href="#work" class="hover:text-indigo-700 transition">Our Work</a>
+<a href="#testimonials" class="hover:text-indigo-700 transition">Testimonials</a>
+<a href="#contact" class="hover:text-indigo-700 transition">Contact</a>
+</nav>
+<a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-indigo-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-indigo-800 transition shadow-md">Get a Free Quote</a>
+</div>
+</header>
+<main>
+<section class="pt-32 pb-24 md:pt-44 md:pb-32 bg-gradient-to-br from-indigo-50 via-white to-white">
+<div class="max-w-7xl mx-auto px-6 text-center md:text-left md:flex md:items-center md:gap-16">
+<div class="md:w-1/2">
+<p class="text-indigo-600 font-semibold text-sm uppercase tracking-wide mb-4">Agency-Grade Expertise</p>
+<h1 class="text-5xl md:text-6xl font-bold leading-tight text-gray-900">We build digital products that grow your business.</h1>
+<p class="mt-6 text-lg text-gray-600 max-w-xl">Site Sprout is a full-service agency — from strategy to launch, we craft high-impact websites and tools that deliver measurable results.</p>
+<div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
+<a href="#contact" class="inline-flex items-center gap-2 bg-indigo-700 text-white px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-indigo-800 transition shadow-lg shadow-indigo-200">Start Your Project</a>
+<a href="#work" class="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-7 py-3.5 rounded-full text-sm font-semibold hover:border-gray-500 transition">See Our Work</a>
+</div>
+</div>
+<div class="mt-16 md:mt-0 md:w-1/2 relative">
+<div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-200">
+<img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80" alt="Agency workspace" class="w-full h-auto object-cover">
+</div>
+<div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold">✓</div>
+<div><span class="font-bold text-lg">120+</span><span class="text-gray-500 text-sm block">projects delivered</span></div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 border-y border-gray-100 bg-white">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<p class="text-xs font-semibold uppercase tracking-widest text-gray-400">Trusted by ambitious companies</p>
+<div class="mt-8 flex flex-wrap justify-center items-center gap-10 text-gray-500 text-sm font-medium">
+<span class="tracking-tight">NovaCloud</span>
+<span class="tracking-tight">PixelDesk</span>
+<span class="tracking-tight">Northwave</span>
+<span class="tracking-tight">LinearLabs</span>
+<span class="tracking-tight">Brightline</span>
+</div>
+</div>
+</section>
+<section id="services" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-4xl font-bold text-gray-900">What we offer</h2>
+<p class="mt-4 text-gray-600 text-lg">Full-cycle agency services — from discovery to deployment and beyond.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+<div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5">
+<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3M5 11h14M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5A2 2 0 003 7v12a2 2 0 002 2z"/></svg>
+</div>
+<h3 class="text-lg font-semibold mb-2">MVP & Prototyping</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Validate your idea fast with a fully functional MVP built for real user feedback.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+<div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5">
+<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+</div>
+<h3 class="text-lg font-semibold mb-2">Custom Web Development</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Tailored applications and platforms built to your exact specifications and workflows.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+<div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5">
+<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 10h8m-8 4h5M4 6h16a1 1 0 011 1v9a1 1 0 01-1 1h-4.586a1 1 0 00-.707.293L11 21l-3.707-3.707A1 1 0 006.586 17H4a1 1 0 01-1-1V7a1 1 0 011-1z"/></svg>
+</div>
+<h3 class="text-lg font-semibold mb-2">UI/UX Design</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Beautiful, user-centered interfaces that drive engagement and conversions.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+<div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5">
+<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19h16M7 10l3 3 4-6 5 7"/></svg>
+</div>
+<h3 class="text-lg font-semibold mb-2">API Integrations</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Seamless connections to Stripe, Zapier, Google, and any custom API you need.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+<div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5">
+<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3l7 4v5c0 4.418-3.134 8.418-7 9-3.866-.582-7-4.582-7-9V7l7-4z"/></svg>
+</div>
+<h3 class="text-lg font-semibold mb-2">Performance Optimization</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Speed up your site and streamline workflows to handle growth without friction.</p>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-md transition">
+<div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-5">
+<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7h8M7 17h4m2 0h4M7 7l-3 3m13-3l3 3M7 17l-3-3m13 3l3-3"/></svg>
+</div>
+<h3 class="text-lg font-semibold mb-2">Maintenance & Support</h3>
+<p class="text-gray-600 text-sm leading-relaxed">Ongoing monitoring, updates, and fast support to keep your platform secure.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="work" class="py-24 bg-gray-50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-4xl font-bold text-gray-900">Results that speak</h2>
+<p class="mt-4 text-gray-600 text-lg">Every project we deliver is built to solve a real problem and drive measurable outcomes.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+<div class="h-48 bg-indigo-100 overflow-hidden"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Marketplace dashboard" class="w-full h-full object-cover"></div>
+<div class="p-6">
+<h3 class="font-bold text-lg">Multi-Vendor Marketplace</h3>
+<p class="text-gray-600 text-sm mt-2">Custom platform with Stripe Connect, vendor dashboards, and automated payouts.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+<div class="h-48 bg-indigo-100 overflow-hidden"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="SaaS dashboard" class="w-full h-full object-cover"></div>
+<div class="p-6">
+<h3 class="font-bold text-lg">SaaS Analytics Dashboard</h3>
+<p class="text-gray-600 text-sm mt-2">Real-time data visualization with user management, permissions, and export features.</p>
+</div>
+</div>
+<div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+<div class="h-48 bg-indigo-100 overflow-hidden"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80" alt="Operations tool" class="w-full h-full object-cover"></div>
+<div class="p-6">
+<h3 class="font-bold text-lg">Internal Ops Platform</h3>
+<p class="text-gray-600 text-sm mt-2">Automated workflows, notifications, and role-based access for a growing team.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="testimonials" class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<h2 class="text-4xl font-bold text-gray-900">Hear from our clients</h2>
+<p class="mt-4 text-gray-600 text-lg">Don't just take our word for it.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm">
+<div class="flex items-center gap-1 text-yellow-400 mb-4">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed mb-4">"Site Sprout took our idea and turned it into a fully functional platform in weeks. Their strategic guidance was invaluable."</p>
+<div class="font-semibold text-sm">— Alex Chen, CEO at NovaCloud</div>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm">
+<div class="flex items-center gap-1 text-yellow-400 mb-4">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed mb-4">"The team redesigned our entire dashboard in three weeks. User engagement increased by 40% almost immediately."</p>
+<div class="font-semibold text-sm">— Sarah Kim, Product Lead at PixelDesk</div>
+</div>
+<div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm">
+<div class="flex items-center gap-1 text-yellow-400 mb-4">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.176 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.063 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/></svg>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed mb-4">"Their strategic approach to our internal tool saved us countless hours. The team is responsive, skilled, and truly partner-minded."</p>
+<div class="font-semibold text-sm">— James Lee, CTO at Northwave</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-24 bg-indigo-700">
+<div class="max-w-3xl mx-auto px-6 text-center">
+<h2 class="text-4xl font-bold text-white">Ready to start your next project?</h2>
+<p class="mt-4 text-indigo-200 text-lg">Let's talk about how we can help you build something great.</p>
+<div class="mt-10 flex flex-wrap justify-center gap-4">
+<a href="#" class="inline-flex items-center gap-2 bg-white text-indigo-700 px-8 py-4 rounded-full text-sm font-semibold hover:bg-indigo-50 transition shadow-lg">Book a Free Consultation</a>
+<a href="mailto:hello@sitesprout.io" class="inline-flex items-center gap-2 border border-indigo-400 text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-indigo-800 transition">hello@sitesprout.io</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-gray-900 text-gray-400 py-12">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<p class="text-sm">&copy; 2025 Site Sprout. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
